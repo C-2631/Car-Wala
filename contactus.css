@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+  perspective: 1500px; /* Adding perspective for 3D effect */
+}
+
+.section {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 4px solid #004b87;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Contact Section */
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(rgba(50, 50, 50, 0.8), rgba(18, 18, 18, 0.8)), url('./imgss/image1.jpg') no-repeat center center/cover;
+}
+
+.contact .content {
+  max-width: 800px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.contact .content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  animation-delay: 0.2s;
+}
+
+.contact .content p {
+  font-weight: 300;
+  color: #cccccc;
+  animation-delay: 0.4s;
+}
+
+/* Contact Info */
+.containerss {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.containerss .contactInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerss .contactInfo .box {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  transform-style: preserve-3d;
+}
+
+.containerss .contactInfo .box:nth-child(1) { animation-delay: 0.3s; }
+.containerss .contactInfo .box:nth-child(2) { animation-delay: 0.5s; }
+.containerss .contactInfo .box:nth-child(3) { animation-delay: 0.7s; }
+
+.containerss .contactInfo .box .icon {
+  min-width: 60px;
+  height: 60px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  transform-style: preserve-3d;
+}
+
+.containerss .contactInfo .box .icon:hover {
+  transform: scale(1.2) rotateY(15deg); /* Slight 3D rotation effect */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.containerss .contactInfo .box .text {
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color: #ffffff;
+  flex-direction: column;
+  font-weight: 300;
+  transition: transform 0.3s ease-in-out;
+}
+
+.containerss .contactInfo .box .text:hover {
+  transform: translateX(10px) rotateX(10deg); /* 3D hover effect */
+}
+
+.containerss .contactInfo .box .text h3 {
+  color: #00bcd4;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Contact Form */
+.contactForm {
+  width: 40%;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+  transform-style: preserve-3d;
+}
+
+.contactForm h2 {
+  font-size: 32px;
+  color: #333;
+  font-weight: 600;
+  transform: rotateX(0);
+  transition: transform 0.3s ease;
+}
+
+.contactForm h2:hover {
+  transform: rotateX(-5deg); /* Slight 3D tilt effect */
+}
+
+.contactForm .input-box {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contactForm .input-box input,
+.contactForm .input-box textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  outline: none;
+  resize: none;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.contactForm .input-box input:focus,
+.contactForm .input-box textarea:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3); /* 3D effect on focus */
+}
+
+.contactForm .input-box input:focus ~ span,
+.contactForm .input-box input:valid ~ span,
+.contactForm .input-box textarea:focus ~ span,
+.contactForm .input-box textarea:valid ~ span {
+  color: #e91e63;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+
+.contactForm .input-box input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: #00bcd4;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  border-radius: 5px;
+}
+
+.contactForm .input-box input[type="submit"]:hover {
+  background: #008ba3;
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* Adding 3D shadow */
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .contact {
+      padding: 50px;
+  }
+  .containerss {
+      flex-direction: column;
+  }
+  .containerss .contactInfo {
+      margin-bottom: 20px;
+  }
+  .containerss .contactInfo {
+      width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
